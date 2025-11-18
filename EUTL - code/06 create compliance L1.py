@@ -1,0 +1,3 @@
+from methods.create_compliance_L1 import create_compliance_L1
+
+create_compliance_L1()

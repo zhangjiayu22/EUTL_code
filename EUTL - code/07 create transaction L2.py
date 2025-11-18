@@ -1,0 +1,3 @@
+from methods.aggregate_transaction import aggregate_transaction
+
+aggregate_transaction()
