@@ -51,7 +51,7 @@ update_account(operators_daily, 'ACCOUNT_HOLDER_COMPANY_REGISTRATION_NUMBER',
                'ACQUIRING_ACCOUNT_HOLDER_COMPANY_REGISTRATION_NUMBER',
                'ACCOUNT_HOLDER_COMPANY_REGISTRATION_NUMBER')
 
-update_list = ['ACCOUNT_TYPE,'
+update_list = ['ACCOUNT_TYPE',
                'ETS_ACCOUNT_TYPE',
                'FULL_TYPE',
                'ACCOUNT_IDENTIFIER_IN_REG']
