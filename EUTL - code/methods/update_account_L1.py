@@ -74,14 +74,21 @@ def update_account_L1(collection, target_code, target_code_tr, target_code_ac, n
         unique_vals = list(set(vals))
 
         if len(unique_vals) == 1:
-            update_fields[new_code] = unique_vals[0]
-        else:
-            if operator_val is not None:
-                update_fields[f"{new_code} 1"] = operator_val
-            if tr_val is not None:
-                update_fields[f"{new_code} 2"] = tr_val
-            if ac_val is not None:
-                update_fields[f"{new_code} 3"] = ac_val
+            update_fields[f"{new_code} 1"] = unique_vals[0]
+            update_fields[f"{new_code} 2"] = ''
+            update_fields[f"{new_code} 3"] = ''
+        elif len(unique_vals) == 2:
+            update_fields[f"{new_code} 1"] = unique_vals[0]
+            update_fields[f"{new_code} 2"] = unique_vals[1]
+            update_fields[f"{new_code} 3"] = ''
+        elif len(unique_vals) == 3:
+            update_fields[f"{new_code} 1"] = unique_vals[0]
+            update_fields[f"{new_code} 2"] = unique_vals[1]
+            update_fields[f"{new_code} 3"] = unique_vals[2]
+        elif len(unique_vals) == 0:
+            update_fields[f"{new_code} 1"] = ''
+            update_fields[f"{new_code} 2"] = ''
+            update_fields[f"{new_code} 3"] = ''
 
         bulk_updates.append(
             UpdateOne(
